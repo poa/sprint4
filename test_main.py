@@ -44,7 +44,7 @@ class TestBooksCollector:
 
         bc.add_new_book(book)
         bc.set_book_genre(book, genre)
-        assert bc.get_book_genre(TestData.books[0]["book"]) == genre
+        assert bc.get_book_genre(book) == genre
 
     def test_set_book_genre_set_two_genres_the_last_is_set(self, bc_with_books):
         book = TestData.books[0]["book"]
@@ -54,6 +54,14 @@ class TestBooksCollector:
         bc_with_books.set_book_genre(book, genre1)
         bc_with_books.set_book_genre(book, genre2)
         assert bc_with_books.get_book_genre(book) == genre2
+
+    def test_get_book_genre_genre_is_the_same_as_been_set(self, bc):
+        book = TestData.books[0]["book"]
+        genre = TestData.books[0]["genre"]
+
+        bc.add_new_book(book)
+        bc.set_book_genre(book, genre)
+        assert bc.get_book_genre(book) == genre
 
     def test_get_books_with_specific_genre_set_same_genre_for_three_books(self, bc_with_books):
         genre = TestData.books[0]["genre"]

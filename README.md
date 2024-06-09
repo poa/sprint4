@@ -10,6 +10,8 @@
   * test_set_book_genre_every_genre_possible_to_set[Детективы]
   * test_set_book_genre_every_genre_possible_to_set[Мультфильмы]
   * test_set_book_genre_every_genre_possible_to_set[Комедии]
+* Проверка метода `get_book_genre`. Установленный жанр, корректно возвращается методом
+  * test_get_book_genre_genre_is_the_same_as_been_set
 * проверка, что если для книги последовательно установить два разных жанра, то в итоге остаентся именно последний
   * test_set_book_genre_set_two_genres_the_last_is_set
 * Проверка, что метод `get_books_with_specific_genre` возвращает верный список книг на примере трёх книг с установленным одинаковым жанром
