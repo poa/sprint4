@@ -1,30 +1,10 @@
-from main import BooksCollector
 import pytest
-
-
-class TestData:
-    books = [
-        {"book": "Град обречённый", "genre": "Фантастика"},
-        {"book": "Что делать, если ваш кот хочет вас убить", "genre": "Ужасы"},
-        {"book": "Кто убил мистера Н", "genre": "Детективы"},
-        {"book": "Котёнок по имени Гав", "genre": "Мультфильмы"},
-        {"book": "Гордость и предубеждение и зомби", "genre": "Комедии"},
-    ]
+from testdata import TestData
 
 
 # класс TestBooksCollector объединяет набор тестов, которыми мы покрываем наше приложение BooksCollector
 # обязательно указывать префикс Test
 class TestBooksCollector:
-    @pytest.fixture()
-    def bc(self):
-        return BooksCollector()
-
-    @pytest.fixture()
-    def bc_with_books(self, bc):
-        for i in range(len(TestData.books)):
-            bc.add_new_book(TestData.books[i]["book"])
-        return bc
-
     # пример теста:
     # обязательно указывать префикс test_
     # дальше идет название метода, который тестируем add_new_book_
